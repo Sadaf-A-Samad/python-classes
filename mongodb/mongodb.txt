@@ -1,0 +1,14 @@
+Database    -   storage of data
+-----------------------------------------
+Collections -   tables
+document    -   Row
+field       -   value/ column
+
+
+===============================================
+Case sensitivity
+-------------------------------------
+ClassNames      -   TitleCase
+functionNames   -   camelCase
+varibles        -   smallcase
+CONSTANTS       -   CAPITALCASE

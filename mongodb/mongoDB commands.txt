@@ -1,0 +1,26 @@
+mongodb commands
+-----------------------------------------
+1. mogod --version		-	to check version of mongo
+2. mongosh --version	-	to check mongo shell version
+3. show dbs		-	show created databases
+3. show collections		-	show created collections
+4. use DBName		-	create and use DB
+5. 2 ways to create collection
+
+ -   db.createCollection("CollectionName")	- to create new  collection
+ -   db.DBName.createCollection("CollectionName")
+
+6. Insert Document  2 ways
+
+ -  collection.insertOne({key: value, key: value, ....})
+ -  collection.insertMany([
+                            {key: value, key: value, ....},
+                            {key: value, key: value, ....},
+                            {key: value, key: value, ....}
+                        ])
+
+7. Find Document 2 ways
+ - db.collectionName.find()	-	show all records
+ - db.collectionName.find({}, {columnName:1, columnName:0 })	
+	- show columns with value: 1 and exclude columns with value: 0
+ - db.collectionName.findOne()

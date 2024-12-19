@@ -1,0 +1,25 @@
+Plateform - a programming language which can create any type of software.
+	AI Application
+	Desktop Application
+	Network Application
+	Mobile Application
+	Hardware Application
+	Websites
+---------------------------------------------------
+server Programming Languages
+-------------------------------------------------------------------
+Plateform
+	1. Java - Oracle -  open source (difficult and secure)
+	2. Python	- open source - (easy and secure)
+	3. Dotnet	- Microsoft (easy but not secure)
+--------------------------------------
+Web Application
+	4. Nodejs
+	5. PHP
+-------------------------------------------------------------------
+	Hybrid Technology
+		-Reactjs and React native (Client Side)
+=======================================================
+Database: Warehouse of data.
+-------------------------------------------------------------------
+

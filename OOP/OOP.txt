@@ -1,0 +1,51 @@
+Procedural Languages-   languages work on functions
+
+CPP =  C++ (gave flavour of OOP)
+
+OOP - Object oriented Programing
+
+Object  -   Entity  (instance of class)
+
+Class   -    (identity - name, behaviour - functionality, properties- attributes)
+            Logical and collection of objects
+
+
+4 basic concepts
+----------------------------------------
+1. Inheritance  -   Realationship of parent and child class
+-------------------------------------------------------------
+    Types of Inheritance
+    1. Single Inheritance   -   One class inherits one child class
+    2. Multiple Inheritance -   More than one class inherits the child class.
+    3. Multi-Level Inheritance  -   parent inherits the child then child inherits   the sub-child & so on.
+==============================================
+2. Encapsulation-   Data Hiding 
+    1. public, 
+    2. private - Me only   -   use Double Underscore '__' infront   of any variable or function
+    3. protected - Friends to Friends - Use Single underscore infront of any variable or function 
+
+=======================================================
+3. Polymorphsm  -   poly - many, morph - shapes
+-----------------------------------------------------
+    1. Static Polymorphsm - Method Overloading
+    ------------------------------------
+        function with same name but different arguments
+        not supported in python default
+        it will be updated to the latest one 
+    ------------------------------------
+
+    2. dynamic Polymorphsm - method overriding
+    ---------------------------------------------
+        a function in parent and alos declared in child with same name and same arguments
+
+    -----------------------------------------
+4. Abstraction  -   functionality hiding
+    -Python by defaul not support abstract classes and function
+    - we can achieve these useing a module(abc) and having a class (ABC)
+    - we use a decorator @abstractmethod
+    - if a class is defined as abstract class we cannot create its object
+    - if a class have atleast one abstract function then automatically become abstract class
+
+
+
+
