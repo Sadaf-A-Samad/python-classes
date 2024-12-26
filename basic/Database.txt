@@ -1,0 +1,24 @@
+Database	-	Warehouse of Data
+
+DBMS -	Database management System
+	A software use to manage your data. Store, view, update,  delete, privillages, create users, etc. 
+----------------------------
+Histry
+------------------
+1. Computerized Filing	-	eg. notepad (text)
+
+2. DBMS	-   Database Managment System.   eg. excel (table)
+3. RDBMS	-	Relational DBMS	eg. Access
+4. ORDBMS - 	Object Oriented RDBMS
+
+--------------------------------
+Problems of Databases
+--------------------------------------
+1. Structure	solve by DBMS with table
+2. Redundency	- repeated notepad
+3. Inconsistency	-Non Related Data
+---------------------------------
+Types of Database
+----------------------------------
+eg-	Oracle, MySQL, SQLServer, SQL Light, Postgree etc
+	No SQL Database is MongoDB

@@ -1,0 +1,45 @@
+Computer -
+Computer is an electronic (automatic) Device (Machine).
+automatic - means have brain
+(Microprocessor or Micro-controller)
+It can process data into information.
+
+Data - Unreadable
+Information - Readable
+
+datatypes:
+1. type of Data
+2. Size of Data
+
+Type of Data
+--------------------------
+1. Numbers
+Integers - Z - {... -3,-2,-1,0,1,2,...}
+1. byte
+2. short
+3. int
+4. long
+
+Rational - Q - {... 0.3 ,0.2 ,0.1 ,0, 0.1, 0.2, 0.3, ...}
+1. float
+2. double
+
+2. Text or String
+3. Boolean - {true or false}
+4. Collections - {list, dict, tuple}
+
+===================================
+Variables - Temprary Storage Area, use to store data during program execution.
+
+Naming Rules
+----------------------------------
+1. Always start with a letter [a-z] or [A-Z]
+2. can use number b/w or in end [0-9]
+3. space is not allowed
+4. special charachters are not allowed except '_'
+5. keywords of languge are not allowed
+
+===================================
+Comments - User Guidlines or statements which compiler ignore
+
+    # Python comment

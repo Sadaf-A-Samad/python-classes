@@ -1,0 +1,14 @@
+Functions:  block of code use to perform some task.
+    they are used for re-useablity
+
+1. simple Functions
+    no argument & no return type
+
+2. argument type Functions
+    have arguments and no return type
+    
+3. return type Functions
+    have arguments and can return value
+
+4. return and argument type functions
+    have arguments and can return value

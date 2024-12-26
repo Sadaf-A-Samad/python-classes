@@ -7,6 +7,7 @@ class Student:
         self.rollno = rollno
         self.stName = stName
         self.dob = dob
+        print('hjgjhgjh')
 
         
     def printInfo(self):

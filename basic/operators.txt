@@ -1,0 +1,29 @@
+Operators: Symbols use to perform some operation
+
+-------------------------------
+Airthmatic Operators
+
++   -   Plus
+-   -   Minus
+*   -   multiply
+/   -   division
+%   -   modulus - Reminder
+//  -   integer Division / floor division
+**  -   power
+
+-----------------------------------------
+Relational Operators
+-------------------------------------------
+<   -   lessthan
+>   -   greaterthan
+<=  -   lessthan or equal to
+>=  -   greaterthan or equal to
+==  -   equal to
+!=  -   not equal to
+
+-------------------------------------------
+Logical Operators   
+-------------------------------------------
+and              
+or
+not
