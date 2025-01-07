@@ -13,20 +13,34 @@ class textWidget(ttk.Window):
 
         self.mainloop()
 
+    def getText(self):
+        self.text.insert('1.0', 'This is text given by me. ')
+      
+
+    def getText2(self):
+        # x = self.text.get('1.0', '1.5')
+        x = self.text.selection_get()
+        self.text1.insert('1.0', x)
+        
 
     def interface(self):
-        
-        text = ttk.Text(
+        button = ttk.Button(self,text='click', command=self.getText).pack(pady=10)
+        button2 = ttk.Button(self,text='click me', command=self.getText2).pack(pady=10)
+
+        txtVar = tk.StringVar()
+        self.text = ttk.Text(
             master=self,
-            height=5
+            height=5,
         )
-        text.pack()
+        self.text.pack()
     	
-        text1 = ScrolledText(
+        self.text1 = ScrolledText(
             master=self,
-            height=5
+            height=5,
         )
-        text1.pack()
+        self.text1.pack()
+
+        
 
 
 textWidget("My Text Widgets", 400, 400)
