@@ -66,24 +66,30 @@ class menuWidget(ttk.Window):
         # val = tk.simpledialog.askfloat("title", "Enter value")
         # val = tk.simpledialog.askinteger("title", "Enter value")
         # print(val)
-
-        file = tk.filedialog.askopenfile(parent=self, mode="rb", title="Open a file")
         # file = tk.filedialog.askopenfiles(parent=self, mode="rb", title="Open a file")
         # file = tk.filedialog.askdirectory(parent=self, mode="rb", title="Open a file")
-       
-        # if file:
-        #     contents = file.read()
-        #     self.text.delete("1.0", "end")
-        #     self.text.insert("1.0", contents)
-        #     file.close()
-        #     self.title(file.name + " - Notepad")
+        x = tk.messagebox.askyesnocancel("Ask Question", "Do you want to save this file?")
+        if x==True:
+            self.save_file()
+        elif x == False:
+            file = tk.filedialog.askopenfile(parent=self, mode="rb", title="Open a file")
+            if file:
+                contents = file.read()
+                self.text.delete("1.0", "end")
+                self.text.insert("1.0", contents)
+                file.close()
+                self.title(file.name + " - Notepad")
+
 
     def save_file(self):
-        file = filedialog.asksaveasfile(mode="w", defaultextension=".txt", filetypes=[("Text Documents", "*.txt"), ("All Files", "*.*")])
-        if file:
-            contents = self.text.get("1.0", "end")
-            file.write(contents)
-            file.close()
-            self.title(file.name + " - Notepad")
-    
+        x = tk.messagebox.askyesno("Ask Question", "Do you want to save this file?")
+        if x==True: 
+            file = filedialog.asksaveasfile(mode="w", defaultextension=".txt", filetypes=[("Text Documents", "*.txt"), ("All Files", "*.*")])
+            if file:
+                contents = self.text.get("1.0", "end")
+                file.write(contents)
+                file.close()
+                self.title(file.name + " - Notepad")
+        
+        
 menuWidget("My Menu", 400, 400)
