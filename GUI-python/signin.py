@@ -4,10 +4,9 @@ from PIL import Image, ImageTk
 from tkinter import messagebox
 import pymongo
 
-class signup(ttk.Window):
+class signin(ttk.Window):
     def __init__(self,title, w, h):
         super().__init__(themename="cyborg")
-        # super().__init__()
         self.title(title)
         self.geometry(f'{w}x{h}')
        
@@ -22,21 +21,19 @@ class signup(ttk.Window):
         print("Connected to Mongodb: ", self.db)
 
 
-    def signup(self):
+    def signin(self):
         mycollection = self.db["users"]
-        user = self.username.get()
-        password = self.password.get()
         email = self.email.get()
+        password = self.password.get()
 
         doc = {
-            'username': user,
             'password': password,
             'email': email
         }
-        user1 = mycollection.insert_one(doc)
+        user1 = mycollection.find_one(doc)
         if user1:
-            print("user is created")
-            tk.messagebox.showinfo("Show Info", "New User created")
+            print("Login Successfull: ",user1)
+            tk.messagebox.showinfo("Show Info", f"Login Successful, Welcome Mr. {user1['username']}")
 
 
 
@@ -47,34 +44,19 @@ class signup(ttk.Window):
 
 
         lbl_title = ttk.Label(self, 
-                              text="Register User", 
+                              text="Login User", 
                               font=('Poor Richard', 24)
                               )
         lbl_title.pack(pady=15, padx=15)
 
-        my_frame2 = ttk.Frame(self)
-        my_frame2.pack(padx=10, pady=10, side="left")
-
-
-        self.image=Image.open('./assets/login.png')
-        self.img=self.image.resize((250, 250))
-        self.photo = ImageTk.PhotoImage(self.img)
-
-        self.l1 = ttk.Label(master=my_frame2, 
-                             padding= 10,
-                             image=self.photo,                                               
-                             )
-        self.l1.pack(padx=10, pady=10)
-
         my_frame = ttk.Frame(self)
-        my_frame.pack(padx=10, pady=10, side="right")
+        my_frame.pack(padx=10, pady=10)
 
-        
-        lbl_user = ttk.Label(my_frame, text="Enter Username")
-        lbl_user.grid(column=1,row=1, pady=5,padx=5)
-        entry_user = ttk.Entry(my_frame, textvariable=self.username)
-        entry_user.grid(column=2,row=1, pady=5, padx=5)
 
+        lbl_email = ttk.Label(my_frame, text="Enter Email")
+        lbl_email.grid(column=1,row=1, pady=5,padx=5)
+        entry_email = ttk.Entry(my_frame, textvariable=self.email)
+        entry_email.grid(column=2,row=1, pady=5, padx=5)
 
         lbl_pass = ttk.Label(my_frame, text="Enter Password")
         lbl_pass.grid(column=1,row=2, pady=5,padx=5)
@@ -82,16 +64,11 @@ class signup(ttk.Window):
         entry_pass.grid(column=2,row=2, pady=5, padx=5)
 
 
-        lbl_email = ttk.Label(my_frame, text="Enter Email")
-        lbl_email.grid(column=1,row=3, pady=5,padx=5)
-        entry_email = ttk.Entry(my_frame, textvariable=self.email)
-        entry_email.grid(column=2,row=3, pady=5, padx=5)
-
         btn_register = ttk.Button(my_frame, text="Register", 
-                                  command=self.signup,
+                                  command=self.signin,
                                   bootstyle='success outline ')
         btn_register.grid(column=1, row=4, pady=5, padx=5)
         btn_cancel = ttk.Button(my_frame, text="Cancel", bootstyle='danger')
         btn_cancel.grid(column=2, row=4, pady=15, padx=10)
 
-signup("Register User", 600, 300)
+signin("Register User", 300, 300)
