@@ -2,24 +2,17 @@ import tkinter as tk
 import ttkbootstrap as ttk
 from PIL import Image, ImageTk
 from tkinter import messagebox
-import pymongo
+from config import DBConnect	 
 
 class signup(ttk.Window):
     def __init__(self,title, w, h):
         super().__init__(themename="cyborg")
-        # super().__init__()
         self.title(title)
         self.geometry(f'{w}x{h}')
        
-        self.config()
+        DBConnect.configDB(self) 
         self.interface()     
         self.mainloop()
-
-
-    def config(self):
-        client = pymongo.MongoClient("mongodb://localhost:27017/")
-        self.db = client["tiictsystem"]
-        print("Connected to Mongodb: ", self.db)
 
 
     def signup(self):
@@ -78,7 +71,7 @@ class signup(ttk.Window):
 
         lbl_pass = ttk.Label(my_frame, text="Enter Password")
         lbl_pass.grid(column=1,row=2, pady=5,padx=5)
-        entry_pass = ttk.Entry(my_frame, textvariable=self.password)
+        entry_pass = ttk.Entry(my_frame, textvariable=self.password, show="*")
         entry_pass.grid(column=2,row=2, pady=5, padx=5)
 
 

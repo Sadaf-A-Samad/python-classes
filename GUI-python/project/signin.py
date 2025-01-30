@@ -2,26 +2,21 @@ import tkinter as tk
 import ttkbootstrap as ttk
 from PIL import Image, ImageTk
 from tkinter import messagebox
-import pymongo
+from config import DBConnect	 
 
 class signin(ttk.Window):
     def __init__(self,title, w, h):
         super().__init__(themename="cyborg")
         self.title(title)
         self.geometry(f'{w}x{h}')
-       
-        self.config()
+        DBConnect.configDB(self)        
         self.interface()     
         self.mainloop()
 
 
-    def config(self):
-        client = pymongo.MongoClient("mongodb://localhost:27017/")
-        self.db = client["tiictsystem"]
-        print("Connected to Mongodb: ", self.db)
-
 
     def signin(self):
+        print(self.db)
         mycollection = self.db["users"]
         email = self.email.get()
         password = self.password.get()
@@ -34,6 +29,7 @@ class signin(ttk.Window):
         if user1:
             print("Login Successfull: ",user1)
             tk.messagebox.showinfo("Show Info", f"Login Successful, Welcome Mr. {user1['username']}")
+
 
 
 
@@ -60,7 +56,7 @@ class signin(ttk.Window):
 
         lbl_pass = ttk.Label(my_frame, text="Enter Password")
         lbl_pass.grid(column=1,row=2, pady=5,padx=5)
-        entry_pass = ttk.Entry(my_frame, textvariable=self.password)
+        entry_pass = ttk.Entry(my_frame, textvariable=self.password, show="*")
         entry_pass.grid(column=2,row=2, pady=5, padx=5)
 
 
@@ -71,4 +67,4 @@ class signin(ttk.Window):
         btn_cancel = ttk.Button(my_frame, text="Cancel", bootstyle='danger')
         btn_cancel.grid(column=2, row=4, pady=15, padx=10)
 
-signin("Register User", 300, 300)
+signin("Login User", 300, 300)
